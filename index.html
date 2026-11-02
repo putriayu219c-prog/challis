@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyNook - Virtual Aesthetic Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Area Kamar Virtual -->
+        <main class="room-container" id="room">
+            <div class="room-header">
+                <h2>🏠 Kamar Belajar</h2>
+                <div class="coin-badge">💰 <span id="coin-count">0</span> Poin</div>
+            </div>
+
+            <div class="room-decorations" id="room-decorations">
+                <p class="placeholder-text">Kamar masih kosong. Selesaikan sesi fokus untuk membeli dekorasi!</p>
+            </div>
+        </main>
+
+        <!-- Panel Samping (Timer & Tugas) -->
+        <aside class="sidebar">
+            <!-- Section Pomodoro Timer -->
+            <section class="card timer-card">
+                <h3>⏱️ Pomodoro Timer</h3>
+                <div class="timer-display" id="timer-display">25:00</div>
+                <div class="timer-controls">
+                    <button id="start-btn" class="btn btn-primary">Mulai</button>
+                    <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Section To-Do List -->
+            <section class="card todo-card">
+                <h3>📝 Daftar Tugas</h3>
+                <form id="todo-form" class="todo-form">
+                    <input type="text" id="todo-input" placeholder="Tambah tugas baru..." required>
+                    <button type="submit" class="btn btn-small">+</button>
+                </form>
+                <ul id="todo-list" class="todo-list"></ul>
+            </section>
+
+            <!-- Tombol Toko -->
+            <button id="shop-btn" class="btn btn-shop">🛍️ Buka Toko Dekorasi</button>
+        </aside>
+    </div>
+
+    <!-- Modal Toko Dekorasi -->
+    <div class="modal" id="shop-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🛍️ Toko Dekorasi Kamar</h3>
+                <button id="close-shop-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="shop-grid" id="shop-items"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
