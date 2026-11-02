@@ -1,0 +1,252 @@
+:root {
+    --bg-color: #f4effa;
+    --card-bg: #ffffff;
+    --primary-color: #b5838d;
+    --primary-hover: #9e6b75;
+    --accent-color: #e8b4b8;
+    --text-color: #4a4e69;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1050px;
+    height: 85vh;
+}
+
+/* Area Kamar Virtual */
+.room-container {
+    background: linear-gradient(135deg, #ffe5ec, #ffcbf2);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coin-badge {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+.room-decorations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-content: flex-end;
+    min-height: 200px;
+}
+
+.placeholder-text {
+    color: rgba(74, 78, 105, 0.6);
+    font-size: 0.9rem;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
+
+.item-card {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: popIn 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-card span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Sidebar & Cards */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+}
+
+/* Timer */
+.timer-card {
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 10px 0 16px;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* To-Do List */
+.todo-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.todo-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+}
+
+.todo-list {
+    list-style: none;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: #f9f8fc;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-secondary { background-color: #e0e0e0; color: var(--text-color); }
+
+.btn-small { padding: 8px 14px; background-color: var(--primary-color); color: white; }
+
+.btn-shop {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Modal Toko */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 24px;
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 480px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.shop-item-card {
+    border: 1px solid #eee;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.shop-item-card .icon { font-size: 2rem; }
+.shop-item-card .price { margin: 6px 0; font-weight: 600; }
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .app-container { grid-template-columns: 1fr; height: auto; }
+}
